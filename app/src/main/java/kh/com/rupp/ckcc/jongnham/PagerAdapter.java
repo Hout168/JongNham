@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class PagerAdapter extends FragmentPagerAdapter{
 
     String[] titles={"store","food","event","comment"};
+    int[] tabIcons = {
+            R.drawable.store, R.drawable.food, R.drawable.event, R.drawable.comment
+    };
     public PagerAdapter(FragmentManager fm){
         super(fm);
     }
@@ -37,15 +40,15 @@ public class PagerAdapter extends FragmentPagerAdapter{
         return titles.length;
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position){
-            case 0: return titles[position];
-            case 1 : return titles[position];
-            case 2 : return titles[position];
-            case 3 : return titles[position];
-            default: return  "";
-        }
-    }
+//    @Nullable
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        switch (position){
+//            case 0: return titles[position];
+//            case 1 : return titles[position];
+//            case 2 : return titles[position];
+//            case 3 : return titles[position];
+//            default: return  "";
+//        }
+//    }
 }

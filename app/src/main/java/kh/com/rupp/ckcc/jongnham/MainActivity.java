@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
+    int[] tabIcons = {
+                R.drawable.store, R.drawable.food, R.drawable.event, R.drawable.comment
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar=findViewById(R.id.toolBar);
         tabLayout=findViewById(R.id.tabLayout);
         viewPager=findViewById(R.id.viewPager);
+
         setSupportActionBar(toolbar);
         ActionBar actionBar =getSupportActionBar();
         setTitle("");
@@ -32,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter adapter=new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-
+        for (int i=0;i<tabLayout.getTabCount();i++){
+            tabLayout.getTabAt(i).setIcon(tabIcons[i]);
+        }
     }
 
     @Override
@@ -41,4 +46,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.option_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+
 }
