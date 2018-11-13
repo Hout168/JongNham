@@ -1,16 +1,15 @@
 package kh.com.rupp.ckcc.jongnham;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class PagerAdapter extends FragmentPagerAdapter{
 
-    int mNoOfTab;
-
-    public PagerAdapter(FragmentManager fm, int NumberOfTab){
+    String[] titles={"store","food","event","comment"};
+    public PagerAdapter(FragmentManager fm){
         super(fm);
-        this.mNoOfTab = NumberOfTab;
     }
 
     @Override
@@ -35,6 +34,18 @@ public class PagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public int getCount() {
-        return mNoOfTab;
+        return titles.length;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position){
+            case 0: return titles[position];
+            case 1 : return titles[position];
+            case 2 : return titles[position];
+            case 3 : return titles[position];
+            default: return  "";
+        }
     }
 }
