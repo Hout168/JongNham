@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -207,3 +214,35 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
+    <LinearLayout
+        android:id="@+id/groupbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.omega_r.libs.OmegaCenterIconButton
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#262626"
+            android:textColor="#fff"
+            android:layout_weight="1"
+            android:text="Call Now"
+            android:drawableStart="@drawable/phone"
+            android:textAllCaps="false"/>
+
+        <com.omega_r.libs.OmegaCenterIconButton
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:textColor="#FF0031"
+            android:text="Map"
+            android:drawableStart="@drawable/location_on"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</RelativeLayout>
